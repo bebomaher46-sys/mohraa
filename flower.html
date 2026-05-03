@@ -1,0 +1,106 @@
+﻿<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8">
+  <title>الورد للورد 🌸</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      direction: rtl;
+      overflow: hidden;
+    }
+
+    /* ورود متحركة */
+    .flower {
+      position: absolute;
+      bottom: -30px;
+      font-size: 22px;
+      animation: floatFlower 7s linear infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes floatFlower {
+      from { transform: translateY(0); opacity: 0.8; }
+      to { transform: translateY(-120vh); opacity: 0; }
+    }
+
+    .card {
+      background: rgba(255,255,255,0.75);
+      padding: 35px 30px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      z-index: 5;
+    }
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      animation: pop 1s ease forwards;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.6); opacity: 0 }
+      to { transform: scale(1); opacity: 1 }
+    }
+
+    h2 {
+      color: #c9184a;
+      margin-bottom: 20px;
+    }
+
+    a {
+      display: inline-block;
+      padding: 12px 22px;
+      background: #ff4d6d;
+      color: white;
+      text-decoration: none;
+      border-radius: 14px;
+      font-size: 18px;
+      transition: 0.3s;
+      box-shadow: 0 6px 18px rgba(255,77,109,0.4);
+    }
+
+    a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(255,77,109,0.6);
+    }
+  </style>
+</head>
+
+<body>
+
+<script>
+  function spawnFlower() {
+    const f = document.createElement("div");
+    f.className = "flower";
+    f.innerHTML = "🌸";
+    f.style.left = Math.random() * 100 + "vw";
+    f.style.fontSize = (18 + Math.random()*24) + "px";
+    f.style.animationDuration = (5 + Math.random()*4) + "s";
+    document.body.appendChild(f);
+    setTimeout(() => f.remove(), 9000);
+  }
+  setInterval(spawnFlower, 600);
+</script>
+
+<div class="card">
+  <img src="flower.jpg" alt="Flower">
+  <h2>الورد للورد يا جميل 🌚🌸</h2>
+
+  <!-- زرار يودّي للصفحة التالتة -->
+  <a href="final.html">خلصنا؟ 🌚</a>
+</div>
+
+</body>
+</html>
